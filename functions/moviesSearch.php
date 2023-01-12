@@ -16,24 +16,26 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
         $conditions["titre"]= $_GET['movie'];
         $i++;
      }
-     $req = "SELECT * FROM film";
+     $req = "SELECT * FROM film as f, genre as g WHERE f.idGenre = g.idGenre ";
     if(sizeof($conditions) > 0){
-        $req .=" WHERE ";
-        $and ="";
+        // $req .=" WHERE ";
+        $and ="AND";
         $j=0 ; 
         foreach($conditions as $key => $value):
-                if ($j==$i) {
-                    $and = "";
-                }
+            if ($j==sizeof($conditions)) {
+                $and = "";
+            }
                 switch($key) {
-                    case "idGenre" : $req .= $and."$key=$value"; break;
-                    case "date_sortie" : $req .= $and."YEAR($key)=$value"; break;
-                    case "titre" : $req .= $and."$key LIKE '%$value%'"; break;
+                    case "idGenre" : $req .= $and." f.$key=$value "; break;
+                    case "date_sortie" : $req .= $and." YEAR($key)=$value "; break;
+                    case "titre" : $req .= $and." $key LIKE '%$value%' "; break;
                 }
-                
-                $and = " AND ";
+            
+                $j++;
         endforeach;
     }
+    $req.=" ORDER BY idFilm";
+    // exit($req);
     // echo $req;
     $requete = $pdo->query($req);
     $movies = $requete->fetchAll(PDO::FETCH_ASSOC);
