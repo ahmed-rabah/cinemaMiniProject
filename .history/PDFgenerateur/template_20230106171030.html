@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reçu_CinemaTi</title>
+    <style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            margin-top: 1.6em;
+            margin-bottom:0;
+        }
+        .d-flex{
+            display : flex; 
+            justify-content: space-between;
+            align-items : center;
+        }
+        .logo-style{
+            width: 200px;
+            height: 100px;
+            background : rgb(141, 141, 139);
+        } 
+        .container{
+            margin: 0 5rem 2rem 5rem;
+        }
+        .d-flex-normal{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        table, td, th {
+            border: 1px solid;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .poster{
+            width:120px;height:120px;
+        }
+    </style>
+</head>
+<body>
+    <h1>tickets N°: {{pdfCounter}}</h1>
+    <div class="container">
+        <table style="border: none;">
+            <tr>
+                <th style="width: 55%;border: none;"><img src="./logoCinema.png" width="100" height="100" alt=""></th>
+                <td style="border: none;"><h3>commandé par {{username}}</h3></td>
+            </tr>
+        </table>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+        <tr>
+            <th style="width: 30%" rowspan="2"><h4>Film</h4></th>
+            <td><img src="./avatar.jpg" class="poster" alt="moviePoster">
+                </td>
+                
+            </tr>
+            <tr>
+                <td><h3 style="display : inline;"> {{movieName}} </h3></td>
+            </tr>
+        <tr>
+            <th>
+                <h4>genre</h4>
+            </th>
+            <td>
+                <h4>{{genre}}</h4>
+            </td> 
+        </tr>
+        <tr>
+            <th>
+                <h4>numero de salle</h4>
+            </th>
+            <td>
+                <h4>{{numSalle}}</h4>
+            </td>
+        </tr>
+        <tr>
+            <th><h4>date de projection</h4></th>
+            <td><h4>le {{date_projection}} à {{heure_debut}} </h4></td>
+        </tr>
+    </table>
+    </div>
+    <div class="container">
+    <table style="width:100%">
+        <tr>
+            <th style="width:30%"><h4>prix unitaire</h4></th>
+            <td><h4>{{prix_unitaire}}</h4></td>
+        </tr>
+        <tr>
+            <th><h4>nombre de tickets commander</h4></th>
+            <td><h4>{{nbrticket}}</h4></td>
+        </tr>
+        <tr>
+            <th><h4>prix total</h4></th>
+            <td><h4>{{total}}</h4></td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo-picture{
+    width: 100px; height :100px;
+}
+
+.cine-name{
+    background-image : linear-gradient(to top,#0a32f9 20% , #02fa54 100%) ; 
+    border-radius : 10px;
+    padding-right: 4px;
+}
+.gradiant-bg{
+    background-color: #5577ff;
+    background-image : linear-gradient(to top,#062fd25d 0% , #aa1191 100%) ; 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-size: 100%;
+    display : flex  ; 
+    align-items: center ; 
+    cursor : pointer ; 
+    text-decoration: none;
+}

@@ -1,0 +1,1 @@
+let activeLink = document.getElementById('accueil');

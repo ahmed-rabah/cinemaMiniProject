@@ -1,0 +1,133 @@
+
+::-webkit-scrollbar{
+    width : 1rem;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #2d00f7a1;
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color:white;
+} 
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo-picture{
+    width: 100px; height :100px;
+}
+/* 
+.cine-name{
+    background-image : linear-gradient(to top,#89f90a 20% , #02fa54 100%) ; 
+    border-radius : 10px;
+    padding-right: 4px;
+} */
+.font-size{
+    font-size: 0.8em;
+}
+/* .account{
+    font-size: 1.2em
+} */
+.gradiant-bg{
+    background-color: #5577ff;
+    background-image : linear-gradient(to top,#2d00f7 0% , #ffffff 100%) ; 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-size: 100%;
+    display : flex  ; 
+    align-items: center ; 
+    cursor : pointer ; 
+    text-decoration: none;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns:auto auto auto ; 
+}
+
+.absolute-alert{
+    background-color: rgba(255,255,255,0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed ; 
+    top: 0;
+    left: 0;
+    z-index: 100 ; 
+    text-align :center; 
+    display :grid ;
+    place-items: center ; 
+    
+}
+.absoluteCart{
+    position: fixed;
+    top: 6em;
+    right: 0;
+    width: 400px;
+    height: 70%;
+    background: #3d5f89;
+    border-radius: 12px;
+    box-shadow: 0 0 4em blue;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    transition: all 0.3s linear ; 
+    transform: translate(110%);
+    overflow-y: auto;
+    }
+    .show-cart {
+    transform: translate(0);
+    }
+    .finaliserBtn{
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        margin-bottom: 1em;
+        height: 50px;
+    }
+    .inner-grid{
+        display: grid ;
+    grid-template-columns:30% 70% ;
+    border-bottom:  1px solid black ;
+    margin: 0.4em 0; 
+    }
+    .grid{
+        display: grid ;
+    grid-template-columns:30% 70% ; 
+    }
+    @media screen and (max-width:1048px) {
+        .grid{
+        display: grid ;
+    grid-template-columns:20% 80% ; 
+    }
+}
+
+#cartContainer{
+    margin: 3em;
+    padding: 3em;
+    display : grid;
+    grid-template-columns: auto auto;
+    gap: 1em;
+    background-color : red ;
+    
+}
+@media screen and (max-width:700px) {
+    #cartContainer{
+    display: grid ;
+grid-template-columns:20% 80% ; 
+}
+
+}

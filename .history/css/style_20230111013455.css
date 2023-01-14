@@ -1,0 +1,46 @@
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo-picture{
+    width: 100px; height :100px;
+}
+/* 
+.cine-name{
+    background-image : linear-gradient(to top,#89f90a 20% , #02fa54 100%) ; 
+    border-radius : 10px;
+    padding-right: 4px;
+} */
+.font-size{
+    font-size: 0.8em;
+}
+/* .account{
+    font-size: 1.2em
+} */
+.gradiant-bg{
+    background-color: #5577ff;
+    background-image : linear-gradient(to top,#2d00f7 0% , #ffffff 100%) ; 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-size: 100%;
+    display : flex  ; 
+    align-items: center ; 
+    cursor : pointer ; 
+    text-decoration: none;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns:auto auto auto ; 
+}
+
+.absolute-alert{
+    position: absolute;
+    top: 20vh;
+    left: 45vw;
+}

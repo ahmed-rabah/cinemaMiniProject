@@ -1,0 +1,32 @@
+table {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    width: 80%;
+    border-collapse: collapse;
+ }
+ 
+ th {
+    font-size: 16px;
+    text-align: left;
+    background-color: #333;
+    color: white;
+ }
+ 
+ td {
+
+    font-size: 16px;
+    border: 1px solid #ccc;
+    padding: 10px;
+ }
+ 
+ tr:nth-child(even) {
+
+    background-color: #eee;
+ }
+ img {
+    width: 200px;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.014);
+    margin-bottom: 10px;
+ }
+ 

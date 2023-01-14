@@ -1,0 +1,73 @@
+let form =  document.getElementById('buyingForm');
+
+
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    let cardType = document.getElementById('cardType').value;
+    let cardNumber = document.getElementById('cardNumber').value;
+    FinaliserCommande("Visa",123443).then(response=>{
+        // let complited = response.complited;
+        // let reponse = response.response;
+        // let connected = response.connected;
+        // alert(connected);
+        // alert(complited);
+        alert(response);
+    //     let msg="";
+    //     if(!connected) {
+    //         reponse+='<strong><a href="./signin.php">Se connecter</a></strong>';
+    //     } 
+    //     if(!complited){
+    //         msg=`<div class="alert alert-warning alert-dismissible fade show" role="alert" id="myAlert">
+    //         ${reponse}
+    //         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    //       </div>`;
+    //     }else{
+    //         msg=`<div class="alert alert-success alert-dismissible fade show" role="alert" id="myAlert">
+    //         ${reponse}
+    //         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    //       </div>`;
+    //       setTimeout(() => {
+    //         location.href="./dashboard.php"
+    //       }, 10000);
+    //     }
+    //     let body = document.querySelector('body');
+    //     body.insertAdjacentHTML('beforeend',`<div class="absolute-alert">${msg}</div>`);
+    //     let theAlert = document.querySelector('.absolute-alert');
+    //     theAlert.addEventListener('click',function(e){
+    //         if(e.target.classList.contains('absolute-alert')){
+    //         theAlert.outerHTML="";
+    //     }})
+    //     let myAlert = document.getElementById('myAlert')
+    //         myAlert.addEventListener('close.bs.alert', () => {
+    //             theAlert.outerHTML="";
+    //         })
+
+    })
+})
+
+
+
+
+async function FinaliserCommande(type,number){
+    let data = new URLSearchParams();
+        data.append('type', type);
+        data.append('number', number);
+    let request = await fetch('./functions/finaliserCommande.php', {
+        method: 'POST',
+        body: data,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
+    });
+    let response = await request.json();
+    return response;
+    
+    // let http = new XMLHttpRequest();
+
+    // http.open('POST','./functions/finaliserCommande.php');
+    // http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // http.send('type='+type)
+    
+    //doing get just for testing
+    // let request =  await fetch('./functions/finaliserCommande.php?type='+cardType+'&number='+cardNumber);
+}
